@@ -1,0 +1,17 @@
+{
+    "name": "szewo/technical-task",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Szewo",
+            "email": "szewczyk.mat@yahoo.com"
+        }
+    ],
+
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
