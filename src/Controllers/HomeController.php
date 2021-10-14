@@ -2,10 +2,13 @@
 
 namespace App\Controllers;
 
+use App\View;
+
 class HomeController
 {
-    public function index()
+
+    public function index(): string
     {
-        echo 'TEST TEST TEST';
+        return View::renderView('index');
     }
 }
