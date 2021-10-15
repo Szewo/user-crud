@@ -10,6 +10,17 @@
 </head>
 
 <body>
-    <h1>VIEWS TEST</h1>
+<h1>VIEWS TEST</h1>
+<ul>
+    <li><a href="">ADD USER</a></li>
+</ul>
+
+
+<?php
+    foreach ($users[0] as $key => $val) {
+        echo $val . '</br>';
+    }
+?>
+
 </body>
 </html>
