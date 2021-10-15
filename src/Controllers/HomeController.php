@@ -33,6 +33,6 @@ class HomeController
 
         (new UserRepository())->persistUser($user);
 
-        return View::renderView('index');
+        header('Location: /');
     }
 }

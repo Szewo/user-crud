@@ -10,17 +10,15 @@ class View
     {
         $viewDir = VIEWS_DIR . $viewName . '.php';
 
-        if(!file_exists($viewDir))
-        {
+        if (!file_exists($viewDir)) {
             throw new ViewNotFoundException('VIEW NOT FOUND');
         }
 
-        //TODO: Passing params to views without errors
-        //if($params){
-        //foreach($params as $key => $value) {
-        //        $$key = $value;
-        //    }
-        // }
+        if (!empty($params)) {
+            foreach ($params as $key => $value) {
+                $$key = $value;
+            }
+        }
 
         return include $viewDir;
     }

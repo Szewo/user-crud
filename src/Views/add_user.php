@@ -11,7 +11,7 @@
 
 <body>
 <h1>ADD USER</h1>
-<form action="/" method="post">
+<form action="/persist-user" method="post">
     <label>First name: </label></br>
     <input type="text" name="user_name"></br>
     <label>Surname: </label></br>

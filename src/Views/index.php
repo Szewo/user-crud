@@ -15,7 +15,20 @@
     <li><a href="http://localhost:8080/add-user">ADD USER</a></li>
 </ul>
 
-TODO: Show all users
+<?php
+    if(isset($users) && is_array($users) && !empty($users))
+    {
+        foreach ($users as $user)
+        {
+            echo '</br>';
+            echo $user['user_name'] . '</br>';
+            echo $user['user_surname'] . '</br>';
+            echo $user['user_telephone_number'] . '</br>';
+            echo $user['user_address'] . '</br>';
+            echo '</br>';
+        }
+    }
+?>
 
 </body>
 </html>
