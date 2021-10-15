@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
     <div class="container-fluid">
         <a class="navbar-brand" href="http://localhost:8080/">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -28,8 +28,8 @@
     </div>
 </nav>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 justify-content-md-center">
+    <div class="row justify-content-center">
+        <div class="col-md-10 mt-5 shadow bg-light">
             <table class="table table-striped">
                 <thead>
                 <tr>
