@@ -35,4 +35,11 @@ class HomeController
 
         header('Location: /');
     }
+
+    public function deleteUser()
+    {
+        (new UserRepository())->deleteUser((int)$_REQUEST['id']);
+
+        header('Location: /');
+    }
 }

@@ -13,7 +13,8 @@ $router = new Router();
 $router
     ->addRoute('GET', '/', [HomeController::class, 'index'])
     ->addRoute('GET','/add-user', [HomeController::class, 'addUser'])
-    ->addRoute('POST', '/persist-user', [HomeController::class, 'handleFormData']);
+    ->addRoute('POST', '/persist-user', [HomeController::class, 'handleFormData'])
+    ->addRoute('GET', '/delete-user', [HomeController::class, 'deleteUser']);
 
 
 try {
