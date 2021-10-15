@@ -12,15 +12,10 @@
 <body>
 <h1>VIEWS TEST</h1>
 <ul>
-    <li><a href="">ADD USER</a></li>
+    <li><a href="http://localhost:8080/add-user">ADD USER</a></li>
 </ul>
 
-
-<?php
-    foreach ($users[0] as $key => $val) {
-        echo $val . '</br>';
-    }
-?>
+TODO: Show all users
 
 </body>
 </html>

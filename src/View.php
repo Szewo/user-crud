@@ -15,9 +15,12 @@ class View
             throw new ViewNotFoundException('VIEW NOT FOUND');
         }
 
-        foreach($params as $key => $value) {
-            $$key = $value;
-        }
+        //TODO: Passing params to views without errors
+        //if($params){
+        //foreach($params as $key => $value) {
+        //        $$key = $value;
+        //    }
+        // }
 
         return include $viewDir;
     }

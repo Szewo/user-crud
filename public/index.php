@@ -10,7 +10,10 @@ const VIEWS_DIR = __DIR__ . '/../src/Views/';
 
 $router = new Router();
 
-$router->addRoute('GET', '/', [HomeController::class, 'index']);
+$router
+    ->addRoute('GET', '/', [HomeController::class, 'index'])
+    ->addRoute('GET','/add-user', [HomeController::class, 'addUser'])
+    ->addRoute('POST', '/', [HomeController::class, 'handleFormData']);
 
 
 try {
