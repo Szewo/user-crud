@@ -14,7 +14,10 @@ $router
     ->addRoute('GET', '/', [HomeController::class, 'index'])
     ->addRoute('GET','/add-user', [HomeController::class, 'addUser'])
     ->addRoute('POST', '/persist-user', [HomeController::class, 'handleFormData'])
-    ->addRoute('GET', '/delete-user', [HomeController::class, 'deleteUser']);
+    ->addRoute('GET', '/delete-user', [HomeController::class, 'deleteUser'])
+    ->addRoute('GET', '/update-user', [HomeController::class, 'updateUser'])
+    ->addRoute('POST', '/update-user', [HomeController::class, 'persistUpdatedUser']);
+
 
 
 try {

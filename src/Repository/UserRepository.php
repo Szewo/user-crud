@@ -37,4 +37,33 @@ class UserRepository extends AbstractRepository
         $db->execute();
     }
 
+    public function getUserById(int $userId)
+    {
+        $sql = 'SELECT * FROM User WHERE user_id = :user_id';
+
+        $db = $this->getPdo()->prepare($sql);
+        $db->bindValue(':user_id', $userId);
+        $db->execute();
+
+        return $db->fetchAll();
+    }
+
+    public function updateUser(User $user, int $userId)
+    {
+        $sql = 'UPDATE User 
+                SET user_name = :user_name,
+                    user_surname = :user_surname,
+                    user_telephone_number = :user_telephone_number,
+                    user_address = :user_address
+                WHERE user_id = :user_id;';
+
+        $db = $this->getPdo()->prepare($sql);
+        $db->bindValue(':user_name', $user->getName());
+        $db->bindValue(':user_surname', $user->getSurname());
+        $db->bindValue(':user_telephone_number', $user->getTelephoneNumber());
+        $db->bindValue(':user_address', $user->getAddress());
+        $db->bindValue(':user_id', $userId);
+        $db->execute();
+    }
+
 }

@@ -42,4 +42,26 @@ class HomeController
 
         header('Location: /');
     }
+
+    public function updateUser(): string
+    {
+        $userRepository = new UserRepository();
+        $userArray = $userRepository->getUserById((int)$_REQUEST['id']);
+
+        return View::renderView('update_user', ['user' => $userArray]);
+    }
+
+    public function persistUpdatedUser()
+    {
+        $user = new User(
+            $_REQUEST['user_name'],
+            $_REQUEST['user_surname'],
+            $_REQUEST['user_telephone_number'],
+            $_REQUEST['user_address']
+        );
+
+        (new UserRepository())->updateUser($user, (int) $_REQUEST['id']);
+
+        header('Location: /');
+    }
 }

@@ -18,7 +18,8 @@
 <?php if (isset($users) && is_array($users) && !empty($users)): ?>
     <?php foreach ($users as $user): ?>
 
-        <a href="http://localhost:8080/delete-user?id= <?php echo $user['user_id'] ?>"> DELETE </a> </br>
+        <a href="http://localhost:8080/delete-user?id=<?php echo $user['user_id'] ?>"> DELETE </a> </br>
+        <a href="http://localhost:8080/update-user?id=<?php echo $user['user_id'] ?>"> UPDATE </a> </br>
 
         <?php echo $user['user_name'] ?>             </br>
         <?php echo $user['user_surname'] ?>          </br>
