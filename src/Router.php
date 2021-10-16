@@ -3,10 +3,17 @@
 namespace App;
 
 use App\Exceptions\RouteNotFoundException;
+use DI\Container;
 
 class Router
 {
     private array $routes = [];
+    private Container $container;
+
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
 
     public function addRoute(string $httpMethod, string $url, array $action): self
     {
@@ -40,7 +47,8 @@ class Router
             throw new RouteNotFoundException('ROUTE NOT FOUND');
         }
 
-        $controllerClass = new $controllerName;
+        $controllerClass = $this->container->get($controllerName);
+
         return $controllerClass->$controllerMethod();
     }
 }
