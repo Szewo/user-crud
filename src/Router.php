@@ -41,7 +41,6 @@ class Router
         }
 
         $controllerClass = new $controllerName;
-
         return $controllerClass->$controllerMethod();
     }
 }

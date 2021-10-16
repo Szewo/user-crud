@@ -17,7 +17,6 @@ class RouterTest extends TestCase
 
     public function testItAddsARoute()
     {
-        $this->router = new Router();
         $this->router->addRoute('GET', '/', [HomeController::class, 'index']);
         $this->router->addRoute('POST', '/', [HomeController::class, 'index']);
         $expectedResult = [
@@ -25,7 +24,21 @@ class RouterTest extends TestCase
                 'POST' => ['/' => ['App\Controllers\HomeController', 'index']],
             ];
 
-        $this->assertEquals($expectedResult, $this->router->getRoutes());
+        $this->assertSame($expectedResult, $this->router->getRoutes());
+    }
+
+    public function testItResolvesRoute()
+    {
+        $testClass = new class() {
+            public function index(): array
+            {
+                return [1, 2, 3];
+            }
+        };
+
+        $this->router->addRoute('GET', '/', [get_class($testClass), 'index']);
+        $result = $this->router->resolveRoute('GET','/');
+        $this->assertSame([1,2,3],$result);
     }
 
 }
