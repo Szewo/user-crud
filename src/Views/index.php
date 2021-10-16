@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -14,10 +13,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
     <div class="container-fluid">
         <a class="navbar-brand" href="http://localhost:8080/">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -51,9 +46,9 @@
                             <td> <?php echo $user['user_address'] ?>           </td>
                             <td>
                                 <a href="http://localhost:8080/delete-user?id=<?php echo $user['user_id'] ?>">
-                                    <span class="badge bg-danger">DELETE</span></a> </br>
+                                    <span class="badge bg-danger w-75">DELETE</span></a> </br>
                                 <a href="http://localhost:8080/update-user?id=<?php echo $user['user_id'] ?>">
-                                    <span class="badge bg-primary">UPDATE</span></a> </br>
+                                    <span class="badge bg-primary w-75">UPDATE</span></a> </br>
                             </td>
                         </tr>
                     <?php endforeach; ?>

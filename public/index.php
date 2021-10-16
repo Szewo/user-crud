@@ -18,8 +18,6 @@ $router
     ->addRoute('GET', '/update-user', [HomeController::class, 'updateUser'])
     ->addRoute('POST', '/update-user', [HomeController::class, 'persistUpdatedUser']);
 
-
-
 try {
     $router->resolveRoute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 } catch (RouteNotFoundException $e) {
