@@ -1,3 +1,4 @@
 .docker/mysql
 /vendor/
 .idea
+.phpunit.result.cache

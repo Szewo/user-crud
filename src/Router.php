@@ -15,6 +15,11 @@ class Router
         return $this;
     }
 
+    public function getRoutes(): array
+    {
+        return $this->routes;
+    }
+
     public function resolveRoute(string $httpMethod, string $url)
     {
         $route = explode('?', $url)[0];
