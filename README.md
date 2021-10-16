@@ -9,3 +9,4 @@ Open your terminal and follow the instructions below:
 3. `docker-compose up -d`
 4. `docker-compose exec php bash`
 5. `composer install`
+6. `run localhost:8080`
